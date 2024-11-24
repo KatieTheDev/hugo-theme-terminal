@@ -1,10 +1,10 @@
 {{- $date := .Date -}}
 {{- with .Params.dateFormat -}}
-  {{- $date | time.Format . -}}
+  {{- $date | time.Format . -}} post
 {{- else -}}
   {{- with .Site.Params.dateFormat -}}
-    {{- $date | time.Format . -}}
+    {{- $date | time.Format . -}} site
   {{- else -}}
-    {{- $date | time.Format "2006-01-02" -}}
+    {{- $date | time.Format "2006-01-02" -}} default
   {{- end -}}
 {{- end -}}
