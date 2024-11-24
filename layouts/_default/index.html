@@ -25,12 +25,12 @@
             <time class="post-date">
               {{- $date := .Date -}}
               {{- with .Params.dateFormat -}}
-                {{- $date | time.Format . -}} post
+                {{- printf "Page-level dateFormat: %q\n" $date | time.Format . -}}
               {{- else -}}
                 {{- with .Site.Params.dateFormat -}}
-                  {{- $date | time.Format . -}} site
+                  {{- printf "Site-level dateFormat: %q\n" $date | time.Format . -}} site
                 {{- else -}}
-                  {{- $date | time.Format "2006-01-02" -}} default
+                  {{- printf "Default dateFormat: %q\n" $date | time.Format "2006-01-02" -}} default
                 {{- end -}}
               {{- end -}}
             </time>
